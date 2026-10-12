@@ -8,10 +8,19 @@
     <meta name="description" content="Cocokkan minat, jurusan, dan keterampilanmu dengan lomba & beasiswa.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/navbar-auth.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/navbar-auth.js" defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js"></script>
+    <script>
+        if (window.ScholarHubAuth) {
+            window.ScholarHubAuth.requireLogin();
+        }
+    </script>
 </head>
 
 <body data-page="scholarmatch">

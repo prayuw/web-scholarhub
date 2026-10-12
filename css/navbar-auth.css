@@ -1,0 +1,116 @@
+/* Tombol autentikasi navbar ScholarHub */
+.sch-auth-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 14px;
+  flex-wrap: wrap;
+}
+
+.sch-auth-user {
+  max-width: 180px;
+  overflow: hidden;
+  color: var(--navy, #142b55);
+  font-size: .88rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sch-auth-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #ffd34e;
+  color: #142b55;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+
+.sch-auth-button:hover {
+  background: #f2c12e;
+  transform: translateY(-1px);
+}
+
+.sch-auth-logout {
+  border-color: rgba(20, 43, 85, .18);
+}
+
+@media (max-width: 640px) {
+  .sch-auth-nav {
+    margin: 8px 0 0;
+  }
+
+  .sch-auth-user {
+    max-width: 130px;
+  }
+}
+
+
+/* Perapian navbar ScholarHub */
+header nav,
+nav.navbar,
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+
+/* Menu tidak terpotong menjadi dua baris */
+header nav a,
+nav.navbar a,
+.navbar nav a {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Tombol Login / Logout */
+#scholarhubAuthNav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+#scholarhubAuthNav .sch-auth-button {
+  min-height: 42px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Nama pengguna tidak membuat navbar melebar */
+#scholarhubAuthNav .sch-auth-user {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 900px) {
+  header nav,
+  nav.navbar,
+  .navbar nav {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  #scholarhubAuthNav {
+    margin-left: 0;
+  }
+}

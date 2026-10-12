@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk | ScholarHub</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="brand" href="index.html" aria-label="ScholarHub - Beranda">
+      <span class="brand-mark">S</span><span>Scholar<span class="brand-accent">Hub</span></span>
+    </a>
+
+    <section class="auth-card">
+      <div class="auth-intro">
+        <p class="eyebrow">SELAMAT DATANG DI SCHOLARHUB</p>
+        <h1>Selamat datang kembali!</h1>
+        <p>Masuk untuk melanjutkan perjalananmu meraih peluang dan prestasi.</p>
+      </div>
+
+      <div class="demo-notice">
+        <strong>Mode demo</strong>
+        <span>Login ini hanya simulasi frontend. Email dan password tidak diverifikasi oleh server.</span>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-field">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required>
+          <small class="field-error" id="loginEmailError"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="loginPassword">Password</label>
+          <div class="password-wrap">
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required>
+            <button class="password-toggle" type="button" data-toggle-password="loginPassword" aria-label="Tampilkan password">Lihat</button>
+          </div>
+          <small class="field-error" id="loginPasswordError"></small>
+        </div>
+
+        <p class="form-message" id="loginMessage" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary btn-full" type="submit">Masuk ke ScholarHub</button>
+      </form>
+
+      <p class="auth-switch">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+      <a class="back-link" href="index.html">← Kembali ke beranda</a>
+    </section>
+    <p class="page-footnote">ScholarHub · Prototype untuk demonstrasi</p>
+  </main>
+</body>
+</html>

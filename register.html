@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar | ScholarHub</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="brand" href="index.html" aria-label="ScholarHub - Beranda">
+      <span class="brand-mark">S</span><span>Scholar<span class="brand-accent">Hub</span></span>
+    </a>
+
+    <section class="auth-card">
+      <div class="auth-intro">
+        <p class="eyebrow">MULAI PERJALANANMU</p>
+        <h1>Buat akun ScholarHub</h1>
+        <p>Satu akun pengguna untuk mengakses ScholarMatch, E-Book, dan Mentorship.</p>
+      </div>
+
+      <div class="demo-notice">
+        <strong>Registrasi demo</strong>
+        <span>Data akun tidak dikirim ke server dan tidak disimpan sebagai akun permanen.</span>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <div class="form-field">
+          <label for="registerName">Nama lengkap</label>
+          <input id="registerName" name="name" type="text" autocomplete="name" placeholder="Masukkan nama lengkap" required>
+          <small class="field-error" id="registerNameError"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="registerEmail">Email</label>
+          <input id="registerEmail" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required>
+          <small class="field-error" id="registerEmailError"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="registerPassword">Password</label>
+          <div class="password-wrap">
+            <input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="Minimal 8 karakter" required>
+            <button class="password-toggle" type="button" data-toggle-password="registerPassword" aria-label="Tampilkan password">Lihat</button>
+          </div>
+          <small class="field-error" id="registerPasswordError"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="confirmPassword">Konfirmasi password</label>
+          <div class="password-wrap">
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Ulangi password" required>
+            <button class="password-toggle" type="button" data-toggle-password="confirmPassword" aria-label="Tampilkan konfirmasi password">Lihat</button>
+          </div>
+          <small class="field-error" id="confirmPasswordError"></small>
+        </div>
+
+        <label class="checkbox-row" for="terms">
+          <input id="terms" name="terms" type="checkbox">
+          <span>Saya memahami bahwa ini adalah prototype demo ScholarHub.</span>
+        </label>
+        <small class="field-error" id="termsError"></small>
+
+        <p class="form-message" id="registerMessage" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary btn-full" type="submit">Buat Akun Demo</button>
+      </form>
+
+      <p class="auth-switch">Sudah punya akun? <a href="login.html">Masuk</a></p>
+      <a class="back-link" href="index.html">← Kembali ke beranda</a>
+    </section>
+    <p class="page-footnote">ScholarHub · Prototype untuk demonstrasi</p>
+  </main>
+</body>
+</html>

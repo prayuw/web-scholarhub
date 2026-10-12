@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Mentorship — ScholarHub</title>
+    <meta name="description"
+        content="Sesi mentoring satu-lawan-satu untuk persiapan lomba, karya ilmiah, dan beasiswa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="mentorship">
+
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><svg class="icon">
+                        <use href="#i-cap"></use>
+                    </svg></span>
+                <span class="brand-text">Scholar<em>Hub</em></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu"></use>
+                </svg>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" data-nav="utama" href="index.html">Utama</a>
+                <a class="nav-link" data-nav="lomba" href="lomba.html">Lomba</a>
+                <a class="nav-link" data-nav="beasiswa" href="beasiswa.html">Beasiswa</a>
+                <a class="nav-link" data-nav="scholarmatch" href="scholarmatch.html">ScholarMatch</a>
+                <a class="nav-link" data-nav="ebook" href="ebook.html">E-Book</a>
+                <a class="nav-link" data-nav="mentorship" href="mentorship.html">Mentorship</a>
+                <a class="btn btn-primary btn-sm nav-cta" data-nav="publikasi" href="publikasi-event.html">Untuk
+                    Penyelenggara</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Utama</a><span>/</span><span>Mentorship</span></nav>
+                <h1>Layanan Mentorship</h1>
+                <p>Sesi pendampingan satu-lawan-satu bersama mentor akademik dan praktisi berpengalaman:
+                    review karya tulis, latihan pitching, hingga strategi beasiswa. Mentorship adalah
+                    layanan terpisah dan tidak termasuk e-book.</p>
+                <span class="badge badge-outline-light">
+                    <svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg> Mentor &amp; jadwal contoh — pembayaran simulasi</span>
+
+                <!-- CTA: Join as a Mentor -->
+                <div class="hero-cta-row">
+                    <a class="btn btn-primary" href="#daftarMentor">
+                        <svg class="icon">
+                            <use href="#i-users"></use>
+                        </svg>Join as a Mentor</a>
+                    <a class="btn btn-light" href="#mentorSection">Lihat Daftar Mentor</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="manfaat-section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Kenapa mentorship?</p>
+                    <h2>Umpan balik nyata, progres lebih cepat</h2>
+                </div>
+                <div class="manfaat-grid">
+                    <div class="manfaat-item"><span class="manfaat-ic"><svg class="icon">
+                                <use href="#i-target"></use>
+                            </svg></span>
+                        <h4>Fokus satu-lawan-satu</h4>
+                        <p>Sesi 60 menit yang sepenuhnya membahas kebutuhanmu.</p>
+                    </div>
+                    <div class="manfaat-item"><span class="manfaat-ic"><svg class="icon">
+                                <use href="#i-edit"></use>
+                            </svg></span>
+                        <h4>Umpan balik konkret</h4>
+                        <p>Review langsung pada naskah, proposal, atau pitch deck-mu.</p>
+                    </div>
+                    <div class="manfaat-item"><span class="manfaat-ic"><svg class="icon">
+                                <use href="#i-calendar"></use>
+                            </svg></span>
+                        <h4>Jadwal fleksibel</h4>
+                        <p>Pilih slot waktu yang tersedia sesuai kesibukan kuliahmu.</p>
+                    </div>
+                    <div class="manfaat-item"><span class="manfaat-ic"><svg class="icon">
+                                <use href="#i-spark"></use>
+                            </svg></span>
+                        <h4>Lintas bidang</h4>
+                        <p>Karya ilmiah, bisnis, teknologi, hingga persiapan beasiswa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRIP BOOKING TERAKHIR -->
+        <section class="strip-section" id="stripSection" hidden>
+            <div class="container">
+                <div class="note success" id="stripIsi"></div>
+            </div>
+        </section>
+
+        <!-- DAFTAR MENTOR -->
+        <section class="mentor-section" id="mentorSection">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Pilih mentormu</p>
+                    <h2>Mentor siap mendampingi</h2>
+                    <p>Profil di bawah ini adalah <b>mentor contoh</b> untuk keperluan demo.</p>
+                </div>
+                <div class="mentor-grid" id="mentorGrid"></div>
+
+                <!-- CTA sekunder: Join as a Mentor -->
+                <div class="mentor-cta-bawah">
+                    <h3>Memiliki pengalaman dan ingin membimbing mahasiswa?</h3>
+                    <p>Daftarkan dirimu sebagai mentor, atur jadwal dan tarif sesi-mu sendiri,
+                        dan mulai berbagi keahlian melalui ScholarHub.</p>
+                    <a class="btn btn-primary" href="#daftarMentor">
+                        <svg class="icon">
+                            <use href="#i-users"></use>
+                        </svg>Join as a Mentor</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKING -->
+        <section class="booking-section" id="bookingSection" hidden>
+            <div class="container">
+                <div class="checkout-card">
+                    <div class="checkout-head">
+                        <h2>Booking Sesi Mentoring</h2>
+                        <button class="link-btn" id="batalBooking">Batalkan booking</button>
+                    </div>
+                    <div class="booking-summary" id="bookingSummary"></div>
+                    <ol class="stepper" id="stepper">
+                        <li class="aktif" data-step="1"><span>1</span>Detail Booking</li>
+                        <li data-step="2"><span>2</span>Pembayaran</li>
+                        <li data-step="3"><span>3</span>Konfirmasi</li>
+                    </ol>
+
+                    <div class="step-panel" id="step1">
+                        <div class="field" id="wrapNama">
+                            <label for="bkNama">Nama lengkap <span class="req">*</span></label>
+                            <input type="text" id="bkNama" placeholder="cth: Raka Pratama">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="field" id="wrapEmail">
+                            <label for="bkEmail">Alamat email <span class="req">*</span></label>
+                            <input type="email" id="bkEmail" placeholder="cth: nama@email.com">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="field" id="wrapWa">
+                            <label for="bkWa">Nomor WhatsApp <span class="req">*</span></label>
+                            <input type="tel" id="bkWa" placeholder="cth: 081234567890">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="field" id="wrapTopik">
+                            <label for="bkTopik">Kebutuhan konsultasi <span class="req">*</span></label>
+                            <textarea id="bkTopik"
+                                placeholder="Jelaskan topik yang ingin kamu diskusikan, cth: review bab 1-2 KTI tentang literasi digital…"></textarea>
+                            <p class="field-error"></p>
+                            <p class="field-hint">Tulis minimal 20 karakter agar mentor bisa bersiap sebelum sesi.</p>
+                        </div>
+                        <div class="modal-cta">
+                            <button class="btn btn-primary" id="btnLanjutBooking">Lanjut ke Pembayaran
+                                <svg class="icon">
+                                    <use href="#i-arrow"></use>
+                                </svg></button>
+                        </div>
+                    </div>
+
+                    <div class="step-panel" id="step2" hidden></div>
+                    <div class="step-panel" id="step3" hidden></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRIP PENDAFTARAN MENTOR TERAKHIR -->
+        <section class="strip-section" id="stripMentorSection" hidden>
+            <div class="container">
+                <div class="note success" id="stripMentorIsi"></div>
+            </div>
+        </section>
+
+        <!-- PENDAFTARAN MENTOR (Join as a Mentor) -->
+        <section class="daftar-mentor-section" id="daftarMentor">
+            <div class="container">
+                <div class="form-card">
+                    <h2><svg class="icon">
+                            <use href="#i-users"></use>
+                        </svg> Pendaftaran Mentor</h2>
+                    <div class="note info" style="margin-top:14px" id="infoDaftarMentor">
+                        <svg class="icon">
+                            <use href="#i-info"></use>
+                        </svg>
+                        <span>Formulir demo — data hanya diproses di browser Anda (tanpa backend).
+                            Kolom bertanda <b>*</b> wajib diisi.</span>
+                    </div>
+
+                    <form id="formDaftarMentor" novalidate>
+                        <div class="field-row">
+                            <div class="field" id="wrapGmNama">
+                                <label for="gmNama">Nama lengkap <span class="req">*</span></label>
+                                <input type="text" id="gmNama" placeholder="cth: Dr. Anisa Rahma, M.Kom.">
+                                <p class="field-error"></p>
+                            </div>
+                            <div class="field" id="wrapGmBidang">
+                                <label for="gmBidang">Bidang keahlian <span class="req">*</span></label>
+                                <select id="gmBidang">
+                                    <option value="">— Pilih bidang keahlian —</option>
+                                    <option>Karya Tulis Ilmiah &amp; Riset</option>
+                                    <option>Kompetisi Teknologi &amp; Hackathon</option>
+                                    <option>Proposal Bisnis &amp; Pitching</option>
+                                    <option>Beasiswa &amp; Studi Lanjut</option>
+                                    <option>Seni &amp; Desain</option>
+                                    <option>Sosial &amp; Lingkungan</option>
+                                    <option>Lainnya</option>
+                                </select>
+                                <p class="field-error"></p>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field" id="wrapGmEmail">
+                                <label for="gmEmail">Alamat email <span class="req">*</span></label>
+                                <input type="email" id="gmEmail" placeholder="cth: nama@email.com">
+                                <p class="field-error"></p>
+                            </div>
+                            <div class="field" id="wrapGmWa">
+                                <label for="gmWa">Nomor WhatsApp <span class="req">*</span></label>
+                                <input type="tel" id="gmWa" placeholder="cth: 081234567890">
+                                <p class="field-error"></p>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field" id="wrapGmInstansi">
+                                <label for="gmInstansi">Perguruan tinggi / instansi
+                                    <span style="font-weight:400;color:var(--muted)">(opsional)</span></label>
+                                <input type="text" id="gmInstansi" placeholder="cth: Universitas Merdeka">
+                                <p class="field-error"></p>
+                            </div>
+                            <div class="field" id="wrapGmTarif">
+                                <label for="gmTarif">Tarif per sesi yang diusulkan (Rp)
+                                    <span style="font-weight:400;color:var(--muted)">(opsional)</span></label>
+                                <input type="number" id="gmTarif" placeholder="cth: 150000" min="0">
+                                <p class="field-error"></p>
+                            </div>
+                        </div>
+                        <div class="field" id="wrapGmPortofolio">
+                            <label for="gmPortofolio">Tautan portofolio / LinkedIn
+                                <span style="font-weight:400;color:var(--muted)">(opsional)</span></label>
+                            <input type="url" id="gmPortofolio" placeholder="https://linkedin.com/in/nama-anda">
+                            <p class="field-error"></p>
+                            <p class="field-hint">Harus diawali http:// atau https:// .</p>
+                        </div>
+                        <div class="field" id="wrapGmPengalaman">
+                            <label for="gmPengalaman">Pengalaman relevan <span class="req">*</span></label>
+                            <textarea id="gmPengalaman"
+                                placeholder="Ceritakan pengalaman Anda sebagai juri lomba, pembimbing riset, praktisi, atau penerima beasiswa…"></textarea>
+                            <p class="field-error"></p>
+                            <p class="field-hint">Tulis minimal 30 karakter agar tim dapat menilai kecocokan bidang.</p>
+                        </div>
+                        <div class="modal-cta">
+                            <button type="submit" class="btn btn-primary" id="btnKirimMentor">
+                                <svg class="icon">
+                                    <use href="#i-upload"></use>
+                                </svg>Kirim Pendaftaran</button>
+                            <button type="reset" class="btn btn-outline" id="btnResetMentor">
+                                <svg class="icon">
+                                    <use href="#i-refresh"></use>
+                                </svg>Kosongkan Formulir</button>
+                        </div>
+                    </form>
+
+                    <!-- Panel hasil pendaftaran (muncul setelah kirim) -->
+                    <div id="hasilDaftarMentor" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark"><svg class="icon">
+                            <use href="#i-cap"></use>
+                        </svg></span>
+                    <span class="brand-text">Scholar<em>Hub</em></span>
+                </a>
+                <p>Aggregator informasi lomba dan beasiswa untuk mahasiswa — temukan peluang,
+                    cocokkan dengan minatmu, dan berkembang bersama mentor serta panduan siap pakai.</p>
+                <p class="footer-note"><svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg>
+                    Situs demo untuk tugas kuliah. Seluruh data bersifat contoh dan pembayaran sepenuhnya simulasi.</p>
+            </div>
+            <nav class="footer-col">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="lomba.html">Informasi Lomba</a></li>
+                    <li><a href="beasiswa.html">Informasi Beasiswa</a></li>
+                    <li><a href="scholarmatch.html">ScholarMatch</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="ebook.html">Pembelian E-Book</a></li>
+                    <li><a href="mentorship.html">Layanan Mentorship</a></li>
+                    <li><a href="publikasi-event.html">Publikasi Event</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li><svg class="icon">
+                            <use href="#i-mail"></use>
+                        </svg>
+                        <a href="mailto:halo@scholarhub.example">halo@scholarhub.example</a>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-phone"></use>
+                        </svg>
+                        <span>+62 812-0000-0000 <em>(nomor contoh)</em></span>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-map-pin"></use>
+                        </svg>
+                        <span>Kampus Merdeka, Jakarta <em>(alamat contoh)</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span data-year>2025</span> ScholarHub — Proyek demo mata kuliah.</span>
+                <span>Dibangun dengan HTML, CSS, dan JavaScript murni.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal profil mentor -->
+    <div class="modal-overlay" id="modalProfil" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close aria-label="Tutup profil">
+                <svg class="icon">
+                    <use href="#i-close"></use>
+                </svg>
+            </button>
+            <div class="modal-body" id="profilBody"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarMatch — Pencocokan Minat — ScholarHub</title>
+    <meta name="description" content="Cocokkan minat, jurusan, dan keterampilanmu dengan lomba & beasiswa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="scholarmatch">
+
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><svg class="icon">
+                        <use href="#i-cap"></use>
+                    </svg></span>
+                <span class="brand-text">Scholar<em>Hub</em></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu"></use>
+                </svg>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" data-nav="utama" href="index.html">Utama</a>
+                <a class="nav-link" data-nav="lomba" href="lomba.html">Lomba</a>
+                <a class="nav-link" data-nav="beasiswa" href="beasiswa.html">Beasiswa</a>
+                <a class="nav-link" data-nav="scholarmatch" href="scholarmatch.html">ScholarMatch</a>
+                <a class="nav-link" data-nav="ebook" href="ebook.html">E-Book</a>
+                <a class="nav-link" data-nav="mentorship" href="mentorship.html">Mentorship</a>
+                <a class="btn btn-primary btn-sm nav-cta" data-nav="publikasi" href="publikasi-event.html">Untuk
+                    Penyelenggara</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Utama</a><span>/</span><span>ScholarMatch</span></nav>
+                <h1>ScholarMatch — Pencocokan Minat &amp; Peluang</h1>
+                <p>Jawab lima pertanyaan singkat tentang dirimu, dan ScholarMatch akan mencocokkan
+                    profilmu dengan lomba serta beasiswa yang paling relevan dari katalog kami.</p>
+                <span class="badge badge-outline-light">
+                    <svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg> Hasil simulasi berbasis data demo — bukan AI</span>
+            </div>
+        </section>
+
+        <section class="match-section">
+            <div class="container match-grid">
+
+                <!-- KUESIONER -->
+                <form class="card sm-form" id="smForm" novalidate>
+                    <h2 class="sm-form-title"><svg class="icon">
+                            <use href="#i-spark"></use>
+                        </svg> Kuesioner Profil</h2>
+
+                    <div class="field" id="wrapJurusan">
+                        <label for="smJurusan">Jurusan / Program Studi <span class="req">*</span></label>
+                        <select id="smJurusan">
+                            <option value="">— Pilih jurusan kamu —</option>
+                            <option>Informatika</option>
+                            <option>Sistem Informasi</option>
+                            <option>Teknik Elektro</option>
+                            <option>Teknik Komputer</option>
+                            <option>Manajemen</option>
+                            <option>Akuntansi</option>
+                            <option>Desain Komunikasi Visual</option>
+                            <option>Psikologi</option>
+                            <option>Kesehatan Masyarakat</option>
+                            <option>Farmasi</option>
+                            <option>Ilmu Komunikasi</option>
+                            <option>Lainnya</option>
+                        </select>
+                        <p class="field-error"></p>
+                    </div>
+
+                    <div class="field" id="wrapSemester">
+                        <label>Semester saat ini <span class="req">*</span></label>
+                        <div class="chip-group">
+                            <label class="chip"><input type="radio" name="semester" value="1"><span>1</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="2"><span>2</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="3"><span>3</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="4"><span>4</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="5"><span>5</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="6"><span>6</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="7"><span>7</span></label>
+                            <label class="chip"><input type="radio" name="semester" value="8"><span>8</span></label>
+                        </div>
+                        <p class="field-error"></p>
+                    </div>
+
+                    <div class="field" id="wrapMinat">
+                        <label>Minat utama <span class="req">*</span></label>
+                        <div class="chip-group">
+                            <label class="chip"><input type="radio" name="minat" value="Sains & Teknologi"><span>Sains
+                                    &amp; Teknologi</span></label>
+                            <label class="chip"><input type="radio" name="minat" value="Bisnis & Startup"><span>Bisnis
+                                    &amp; Startup</span></label>
+                            <label class="chip"><input type="radio" name="minat" value="Seni & Desain"><span>Seni &amp;
+                                    Desain</span></label>
+                            <label class="chip"><input type="radio" name="minat" value="Karya Tulis Ilmiah"><span>Karya
+                                    Tulis Ilmiah</span></label>
+                            <label class="chip"><input type="radio" name="minat"
+                                    value="Sosial & Lingkungan"><span>Sosial &amp; Lingkungan</span></label>
+                        </div>
+                        <p class="field-error"></p>
+                    </div>
+
+                    <div class="field" id="wrapSkill">
+                        <label>Bidang keterampilan <span class="req">*</span> <span
+                                style="font-weight:400;color:var(--muted)">(boleh pilih lebih dari satu)</span></label>
+                        <div class="chip-group">
+                            <label class="chip"><input type="checkbox" name="skill"
+                                    value="Menulis"><span>Menulis</span></label>
+                            <label class="chip"><input type="checkbox" name="skill"
+                                    value="Coding"><span>Coding</span></label>
+                            <label class="chip"><input type="checkbox" name="skill" value="Desain Grafis"><span>Desain
+                                    Grafis</span></label>
+                            <label class="chip"><input type="checkbox" name="skill"
+                                    value="Presentasi"><span>Presentasi</span></label>
+                            <label class="chip"><input type="checkbox" name="skill" value="Analisis Data"><span>Analisis
+                                    Data</span></label>
+                            <label class="chip"><input type="checkbox" name="skill"
+                                    value="Riset"><span>Riset</span></label>
+                        </div>
+                        <p class="field-error"></p>
+                    </div>
+
+                    <div class="field" id="wrapJenis">
+                        <label>Jenis peluang yang dicari <span class="req">*</span></label>
+                        <div class="chip-group">
+                            <label class="chip"><input type="radio" name="jenis"
+                                    value="lomba"><span>Lomba</span></label>
+                            <label class="chip"><input type="radio" name="jenis"
+                                    value="beasiswa"><span>Beasiswa</span></label>
+                            <label class="chip"><input type="radio" name="jenis"
+                                    value="keduanya"><span>Keduanya</span></label>
+                        </div>
+                        <p class="field-error"></p>
+                    </div>
+
+                    <div class="sm-form-cta">
+                        <button type="submit" class="btn btn-primary" id="btnMatch">
+                            <svg class="icon">
+                                <use href="#i-spark"></use>
+                            </svg>Cari Rekomendasi</button>
+                        <button type="button" class="btn btn-outline" id="btnResetMatch">
+                            <svg class="icon">
+                                <use href="#i-refresh"></use>
+                            </svg>Isi Ulang</button>
+                    </div>
+                    <p class="fineprint">Rekomendasi dihasilkan dari aturan pencocokan sederhana (kategori &amp;
+                        kata kunci) di atas data demo — bukan sistem AI.</p>
+                </form>
+
+                <!-- HASIL -->
+                <div class="hasil-panel">
+                    <div class="hasil-placeholder" id="hasilPlaceholder">
+                        <div class="empty-icon"><svg class="icon">
+                                <use href="#i-spark"></use>
+                            </svg></div>
+                        <h3>Rekomendasi akan muncul di sini</h3>
+                        <p>Lengkapi kuesioner di samping, lalu klik <b>Cari Rekomendasi</b>
+                            untuk melihat peluang yang paling cocok dengan profilmu.</p>
+                    </div>
+                    <div id="hasilKonten" hidden>
+                        <div class="hasil-head">
+                            <h2>Rekomendasi untukmu</h2>
+                            <button class="btn btn-outline btn-sm" id="btnPerbarui">
+                                <svg class="icon">
+                                    <use href="#i-edit"></use>
+                                </svg>Perbarui Jawaban</button>
+                        </div>
+                        <p class="hasil-sub" id="hasilSub"></p>
+                        <div class="item-list" id="hasilList"></div>
+                        <div class="hasil-footer">
+                            <p>Rekomendasi kurang sesuai?</p>
+                            <button class="link-btn" id="btnIsiUlang">Isi ulang kuesioner dan cocokkan kembali</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark"><svg class="icon">
+                            <use href="#i-cap"></use>
+                        </svg></span>
+                    <span class="brand-text">Scholar<em>Hub</em></span>
+                </a>
+                <p>Aggregator informasi lomba dan beasiswa untuk mahasiswa — temukan peluang,
+                    cocokkan dengan minatmu, dan berkembang bersama mentor serta panduan siap pakai.</p>
+                <p class="footer-note"><svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg>
+                    Situs demo untuk tugas kuliah. Seluruh data bersifat contoh dan pembayaran sepenuhnya simulasi.</p>
+            </div>
+            <nav class="footer-col">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="lomba.html">Informasi Lomba</a></li>
+                    <li><a href="beasiswa.html">Informasi Beasiswa</a></li>
+                    <li><a href="scholarmatch.html">ScholarMatch</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="ebook.html">Pembelian E-Book</a></li>
+                    <li><a href="mentorship.html">Layanan Mentorship</a></li>
+                    <li><a href="publikasi-event.html">Publikasi Event</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li><svg class="icon">
+                            <use href="#i-mail"></use>
+                        </svg>
+                        <a href="mailto:halo@scholarhub.example">halo@scholarhub.example</a>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-phone"></use>
+                        </svg>
+                        <span>+62 812-0000-0000 <em>(nomor contoh)</em></span>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-map-pin"></use>
+                        </svg>
+                        <span>Kampus Merdeka, Jakarta <em>(alamat contoh)</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span data-year>2025</span> ScholarHub — Proyek demo mata kuliah.</span>
+                <span>Dibangun dengan HTML, CSS, dan JavaScript murni.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalDetail" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close aria-label="Tutup detail">
+                <svg class="icon">
+                    <use href="#i-close"></use>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

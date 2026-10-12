@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Lomba — ScholarHub</title>
+    <meta name="description" content="Katalog lomba untuk mahasiswa dengan pencarian dan filter.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="lomba">
+
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><svg class="icon">
+                        <use href="#i-cap"></use>
+                    </svg></span>
+                <span class="brand-text">Scholar<em>Hub</em></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu"></use>
+                </svg>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" data-nav="utama" href="index.html">Utama</a>
+                <a class="nav-link" data-nav="lomba" href="lomba.html">Lomba</a>
+                <a class="nav-link" data-nav="beasiswa" href="beasiswa.html">Beasiswa</a>
+                <a class="nav-link" data-nav="scholarmatch" href="scholarmatch.html">ScholarMatch</a>
+                <a class="nav-link" data-nav="ebook" href="ebook.html">E-Book</a>
+                <a class="nav-link" data-nav="mentorship" href="mentorship.html">Mentorship</a>
+                <a class="btn btn-primary btn-sm nav-cta" data-nav="publikasi" href="publikasi-event.html">Untuk
+                    Penyelenggara</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Utama</a><span>/</span><span>Lomba</span></nav>
+                <h1>Layanan Informasi Lomba</h1>
+                <p>Jelajahi kompetisi untuk mahasiswa — cari berdasarkan kata kunci, saring kategori,
+                    tingkat, biaya, dan deadline, lalu lihat detail lengkapnya di satu tempat.</p>
+                <span class="badge badge-outline-light">
+                    <svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg> Data demo — bukan pengumuman resmi</span>
+            </div>
+        </section>
+
+        <section class="katalog-section">
+            <div class="container katalog-layout">
+
+                <!-- SIDEBAR FILTER -->
+                <aside class="filter-panel" id="filterPanel">
+                    <div class="filter-head">
+                        <h3><svg class="icon">
+                                <use href="#i-filter"></use>
+                            </svg> Filter</h3>
+                        <button class="link-btn" id="resetFilter">Reset</button>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Kategori</h4>
+                        <div class="chip-group" id="kategoriChips"></div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Tingkat</h4>
+                        <div class="chip-group">
+                            <label class="chip"><input type="radio" name="tingkat" value="Semua"
+                                    checked><span>Semua</span></label>
+                            <label class="chip"><input type="radio" name="tingkat"
+                                    value="Lokal"><span>Lokal</span></label>
+                            <label class="chip"><input type="radio" name="tingkat"
+                                    value="Regional"><span>Regional</span></label>
+                            <label class="chip"><input type="radio" name="tingkat"
+                                    value="Nasional"><span>Nasional</span></label>
+                            <label class="chip"><input type="radio" name="tingkat"
+                                    value="Internasional"><span>Internasional</span></label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Biaya</h4>
+                        <div class="chip-group">
+                            <label class="chip"><input type="radio" name="biaya" value="Semua"
+                                    checked><span>Semua</span></label>
+                            <label class="chip"><input type="radio" name="biaya"
+                                    value="Gratis"><span>Gratis</span></label>
+                            <label class="chip"><input type="radio" name="biaya"
+                                    value="Berbayar"><span>Berbayar</span></label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Batas Deadline</h4>
+                        <div class="field" style="margin:0">
+                            <select id="filterDeadline">
+                                <option value="">Semua deadline</option>
+                                <option value="7">paling lambat 7 hari lagi</option>
+                                <option value="30">paling lambat 30 hari lagi</option>
+                                <option value="90">paling lambat 90 hari lagi</option>
+                            </select>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- HASIL -->
+                <div class="hasil-col">
+                    <div class="search-bar">
+                        <svg class="icon">
+                            <use href="#i-search"></use>
+                        </svg>
+                        <input type="search" id="cariLomba"
+                            placeholder="Cari judul lomba, penyelenggara, atau kata kunci…">
+                        <button class="btn btn-primary btn-sm" id="btnCari">Cari</button>
+                    </div>
+                    <div class="hasil-toolbar">
+                        <p class="hasil-count" id="hasilCount"></p>
+                        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                            <label class="sort-wrap">Urutkan
+                                <select id="urutkan">
+                                    <option value="deadline">Deadline terdekat</option>
+                                    <option value="baru">Terbaru ditambahkan</option>
+                                    <option value="judul">Judul A–Z</option>
+                                </select>
+                            </label>
+                            <button class="filter-toggle-btn" id="toggleFilter">
+                                <svg class="icon">
+                                    <use href="#i-filter"></use>
+                                </svg> Filter</button>
+                        </div>
+                    </div>
+
+                    <div class="item-list" id="lombaList"></div>
+
+                    <div class="empty-state" id="emptyLomba" hidden>
+                        <div class="empty-icon"><svg class="icon">
+                                <use href="#i-search"></use>
+                            </svg></div>
+                        <h3>Tidak ada lomba yang cocok</h3>
+                        <p>Coba ubah kata kunci pencarian atau longgarkan filter yang dipilih.</p>
+                        <button class="btn btn-outline" id="resetFilter2">
+                            <svg class="icon">
+                                <use href="#i-refresh"></use>
+                            </svg> Reset Semua Filter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark"><svg class="icon">
+                            <use href="#i-cap"></use>
+                        </svg></span>
+                    <span class="brand-text">Scholar<em>Hub</em></span>
+                </a>
+                <p>Aggregator informasi lomba dan beasiswa untuk mahasiswa — temukan peluang,
+                    cocokkan dengan minatmu, dan berkembang bersama mentor serta panduan siap pakai.</p>
+                <p class="footer-note"><svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg>
+                    Situs demo untuk tugas kuliah. Seluruh data bersifat contoh dan pembayaran sepenuhnya simulasi.</p>
+            </div>
+            <nav class="footer-col">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="lomba.html">Informasi Lomba</a></li>
+                    <li><a href="beasiswa.html">Informasi Beasiswa</a></li>
+                    <li><a href="scholarmatch.html">ScholarMatch</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="ebook.html">Pembelian E-Book</a></li>
+                    <li><a href="mentorship.html">Layanan Mentorship</a></li>
+                    <li><a href="publikasi-event.html">Publikasi Event</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li><svg class="icon">
+                            <use href="#i-mail"></use>
+                        </svg>
+                        <a href="mailto:halo@scholarhub.example">halo@scholarhub.example</a>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-phone"></use>
+                        </svg>
+                        <span>+62 812-0000-0000 <em>(nomor contoh)</em></span>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-map-pin"></use>
+                        </svg>
+                        <span>Kampus Merdeka, Jakarta <em>(alamat contoh)</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span data-year>2025</span> ScholarHub — Proyek demo mata kuliah.</span>
+                <span>Dibangun dengan HTML, CSS, dan JavaScript murni.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal detail lomba -->
+    <div class="modal-overlay" id="modalDetail" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close aria-label="Tutup detail">
+                <svg class="icon">
+                    <use href="#i-close"></use>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

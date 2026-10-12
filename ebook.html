@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog E-Book — ScholarHub</title>
+    <meta name="description"
+        content="Beli e-book panduan persiapan lomba, karya ilmiah, proposal bisnis, dan beasiswa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="ebook">
+
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><svg class="icon">
+                        <use href="#i-cap"></use>
+                    </svg></span>
+                <span class="brand-text">Scholar<em>Hub</em></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu"></use>
+                </svg>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" data-nav="utama" href="index.html">Utama</a>
+                <a class="nav-link" data-nav="lomba" href="lomba.html">Lomba</a>
+                <a class="nav-link" data-nav="beasiswa" href="beasiswa.html">Beasiswa</a>
+                <a class="nav-link" data-nav="scholarmatch" href="scholarmatch.html">ScholarMatch</a>
+                <a class="nav-link" data-nav="ebook" href="ebook.html">E-Book</a>
+                <a class="nav-link" data-nav="mentorship" href="mentorship.html">Mentorship</a>
+                <a class="btn btn-primary btn-sm nav-cta" data-nav="publikasi" href="publikasi-event.html">Untuk
+                    Penyelenggara</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Utama</a><span>/</span><span>E-Book</span></nav>
+                <h1>Katalog E-Book Panduan</h1>
+                <p>Panduan praktis yang ditulis ringkas dan siap pakai — mulai dari menyusun karya tulis
+                    ilmiah hingga mempersiapkan beasiswa impianmu. E-book dibeli secara mandiri
+                    dan terpisah dari layanan mentorship.</p>
+                <span class="badge badge-outline-light">
+                    <svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg> Pembayaran &amp; produk demo — tidak ada transaksi nyata</span>
+            </div>
+        </section>
+
+        <!-- STRIP PESANAN TERAKHIR (dari localStorage) -->
+        <section class="strip-section" id="stripSection" hidden>
+            <div class="container">
+                <div class="note success" id="stripIsi"></div>
+            </div>
+        </section>
+
+        <!-- KATALOG -->
+        <section class="katalog-ebook" id="katalogEbook">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Pilih panduanmu</p>
+                    <h2>E-book populer untuk persiapan kompetisi</h2>
+                    <p>Semua harga adalah harga contoh. Klik <b>Lihat Detail</b> untuk isi ringkas tiap e-book.</p>
+                </div>
+                <div class="ebook-grid" id="ebookGrid"></div>
+            </div>
+        </section>
+
+        <!-- CHECKOUT -->
+        <section class="checkout-section" id="checkoutSection" hidden>
+            <div class="container">
+                <div class="checkout-card">
+                    <div class="checkout-head">
+                        <h2>Selesaikan Pembelian</h2>
+                        <button class="link-btn" id="batalBeli">Batalkan pesanan</button>
+                    </div>
+                    <ol class="stepper" id="stepper">
+                        <li class="aktif" data-step="1"><span>1</span>Data Pembeli</li>
+                        <li data-step="2"><span>2</span>Ringkasan &amp; Pembayaran</li>
+                        <li data-step="3"><span>3</span>Selesai</li>
+                    </ol>
+
+                    <div class="step-panel" id="step1">
+                        <div class="field" id="wrapNama">
+                            <label for="ebNama">Nama lengkap <span class="req">*</span></label>
+                            <input type="text" id="ebNama" placeholder="cth. Putri Anindya">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="field" id="wrapEmail">
+                            <label for="ebEmail">Alamat email <span class="req">*</span></label>
+                            <input type="email" id="ebEmail" placeholder="cth. nama@email.com">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="field" id="wrapWa">
+                            <label for="ebWa">Nomor WhatsApp <span class="req">*</span></label>
+                            <input type="tel" id="ebWa" placeholder="cth. 081234567890">
+                            <p class="field-error"></p>
+                        </div>
+                        <div class="modal-cta">
+                            <button class="btn btn-primary" id="btnLanjut1">Lanjut ke Ringkasan
+                                <svg class="icon">
+                                    <use href="#i-arrow"></use>
+                                </svg></button>
+                        </div>
+                    </div>
+
+                    <div class="step-panel" id="step2" hidden></div>
+                    <div class="step-panel" id="step3" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark"><svg class="icon">
+                            <use href="#i-cap"></use>
+                        </svg></span>
+                    <span class="brand-text">Scholar<em>Hub</em></span>
+                </a>
+                <p>Aggregator informasi lomba dan beasiswa untuk mahasiswa — temukan peluang,
+                    cocokkan dengan minatmu, dan berkembang bersama mentor serta panduan siap pakai.</p>
+                <p class="footer-note"><svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg>
+                    Situs demo untuk tugas kuliah. Seluruh data bersifat contoh dan pembayaran sepenuhnya simulasi.</p>
+            </div>
+            <nav class="footer-col">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="lomba.html">Informasi Lomba</a></li>
+                    <li><a href="beasiswa.html">Informasi Beasiswa</a></li>
+                    <li><a href="scholarmatch.html">ScholarMatch</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="ebook.html">Pembelian E-Book</a></li>
+                    <li><a href="mentorship.html">Layanan Mentorship</a></li>
+                    <li><a href="publikasi-event.html">Publikasi Event</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li><svg class="icon">
+                            <use href="#i-mail"></use>
+                        </svg>
+                        <a href="mailto:halo@scholarhub.example">halo@scholarhub.example</a>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-phone"></use>
+                        </svg>
+                        <span>+62 812-0000-0000 <em>(nomor contoh)</em></span>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-map-pin"></use>
+                        </svg>
+                        <span>Kampus Merdeka, Jakarta <em>(alamat contoh)</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span data-year>2025</span> ScholarHub — Proyek demo mata kuliah.</span>
+                <span>Dibangun dengan HTML, CSS, dan JavaScript murni.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalDetail" aria-hidden="true">
+        <div class="modal modal-lebar" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close aria-label="Tutup detail">
+                <svg class="icon">
+                    <use href="#i-close"></use>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>

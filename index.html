@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarHub — Temukan Lomba & Beasiswa untuk Mahasiswa</title>
+    <meta name="description"
+        content="ScholarHub: aggregator informasi lomba, beasiswa, dan peluang pengembangan diri untuk mahasiswa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="utama">
+
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><svg class="icon">
+                        <use href="#i-cap"></use>
+                    </svg></span>
+                <span class="brand-text">Scholar<em>Hub</em></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <svg class="icon">
+                    <use href="#i-menu"></use>
+                </svg>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" data-nav="utama" href="index.html">Utama</a>
+                <a class="nav-link" data-nav="lomba" href="lomba.html">Lomba</a>
+                <a class="nav-link" data-nav="beasiswa" href="beasiswa.html">Beasiswa</a>
+                <a class="nav-link" data-nav="scholarmatch" href="scholarmatch.html">ScholarMatch</a>
+                <a class="nav-link" data-nav="ebook" href="ebook.html">E-Book</a>
+                <a class="nav-link" data-nav="mentorship" href="mentorship.html">Mentorship</a>
+                <a class="btn btn-primary btn-sm nav-cta" data-nav="publikasi" href="publikasi-event.html">Untuk
+                    Penyelenggara</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-kicker">Platform peluang mahasiswa</p>
+                    <h1>Temukan Peluang, Raih Prestasi Bersama <span>ScholarHub.</span></h1>
+                    <p class="hero-lead">ScholarHub membantu mahasiswa menemukan lomba, beasiswa, dan peluang
+                        pengembangan diri dalam satu tempat — lengkap dengan pencocokan minat,
+                        e-book panduan, dan pendampingan mentor.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="lomba.html"><svg class="icon">
+                                <use href="#i-trophy"></use>
+                            </svg>Cari Lomba</a>
+                        <a class="btn btn-light" href="beasiswa.html"><svg class="icon">
+                                <use href="#i-wallet"></use>
+                            </svg>Cari Beasiswa</a>
+                        <a class="btn btn-hero-alt" href="scholarmatch.html">Coba ScholarMatch<svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></a>
+                    </div>
+                    <p class="hero-note">
+                        <svg class="icon">
+                            <use href="#i-info"></use>
+                        </svg>
+                        <span>Seluruh data pada website ini bersifat dummy.</span>
+                    </p>
+                </div>
+                <div class="hero-panel" aria-label="Contoh peluang yang sedang dibuka">
+                    <div class="hero-panel-head"><span class="dot-live"></span>Sedang dibuka</div>
+                    <div class="hero-slides" id="heroSlides"></div>
+                    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Pilih peluang"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATISTIK -->
+        <section class="stats-strip" aria-label="Statistik ScholarHub">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat"><span class="stat-num"><b data-count="128">0</b><em>+</em></span><span
+                            class="stat-label">Lomba aktif terdata</span></div>
+                    <div class="stat"><span class="stat-num"><b data-count="76">0</b><em>+</em></span><span
+                            class="stat-label">Beasiswa aktif terdata</span></div>
+                    <div class="stat"><span class="stat-num"><b data-count="42">0</b><em>+</em></span><span
+                            class="stat-label">Mentor siap mendampingi</span></div>
+                    <div class="stat"><span class="stat-num"><b data-count="6">0</b></span><span
+                            class="stat-label">E-book panduan siap pakai</span></div>
+                </div>
+                <p class="fineprint center">* Angka merupakan <b>data demo</b> untuk keperluan tampilan, bukan data
+                    resmi.</p>
+            </div>
+        </section>
+
+        <!-- KATEGORI POPULER -->
+        <section class="kategori-section">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="kicker center">Kategori populer</p>
+                    <h2>Mulai dari bidang yang kamu sukai</h2>
+                    <p>Telusuri peluang berdasarkan kategori favorit mahasiswa.</p>
+                </div>
+                <div class="kategori-grid">
+                    <a class="kategori-tile" href="lomba.html?kategori=Sains%20%26%20Teknologi">
+                        <span class="kategori-ic"><svg class="icon">
+                                <use href="#i-flask"></use>
+                            </svg></span>
+                        <strong>Sains &amp; Teknologi</strong>
+                        <span class="kategori-count"><b id="count-snt">0</b> lomba aktif</span>
+                        <span class="kategori-cta">Jelajahi <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="kategori-tile" href="lomba.html?kategori=Bisnis%20%26%20Startup">
+                        <span class="kategori-ic"><svg class="icon">
+                                <use href="#i-briefcase"></use>
+                            </svg></span>
+                        <strong>Bisnis &amp; Startup</strong>
+                        <span class="kategori-count"><b id="count-bis">0</b> lomba aktif</span>
+                        <span class="kategori-cta">Jelajahi <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="kategori-tile" href="lomba.html?kategori=Seni%20%26%20Desain">
+                        <span class="kategori-ic"><svg class="icon">
+                                <use href="#i-palette"></use>
+                            </svg></span>
+                        <strong>Seni &amp; Desain</strong>
+                        <span class="kategori-count"><b id="count-seni">0</b> lomba aktif</span>
+                        <span class="kategori-cta">Jelajahi <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="kategori-tile" href="beasiswa.html">
+                        <span class="kategori-ic"><svg class="icon">
+                                <use href="#i-wallet"></use>
+                            </svg></span>
+                        <strong>Beasiswa</strong>
+                        <span class="kategori-count"><b id="count-bea">0</b> beasiswa aktif</span>
+                        <span class="kategori-cta">Jelajahi <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERBARU -->
+        <section class="terbaru-section">
+            <div class="container">
+                <div class="terbaru-head">
+                    <div class="section-head">
+                        <p class="kicker">Terbaru di ScholarHub</p>
+                        <h2>Peluang yang baru ditambahkan</h2>
+                    </div>
+                    <div class="tab-toggle" role="tablist" aria-label="Pilih jenis peluang">
+                        <button class="tab-btn aktif" data-tab="lomba" role="tab">Lomba</button>
+                        <button class="tab-btn" data-tab="beasiswa" role="tab">Beasiswa</button>
+                    </div>
+                </div>
+                <div class="terbaru-grid" id="terbaruGrid"></div>
+                <div class="terbaru-more">
+                    <a class="btn btn-outline" id="terbaruMoreLink" href="lomba.html">
+                        Lihat semua <span id="terbaruMoreTeks">lomba</span> <svg class="icon">
+                            <use href="#i-arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENAM LAYANAN -->
+        <section class="layanan-section">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="kicker center">Enam layanan utama</p>
+                    <h2>Semua yang kamu butuhkan, dalam satu platform</h2>
+                </div>
+                <div class="layanan-grid">
+                    <a class="layanan-card" href="lomba.html">
+                        <div class="layanan-top"><span class="layanan-no">01</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-trophy"></use>
+                                </svg></span>
+                        </div>
+                        <h3>Informasi Lomba</h3>
+                        <p>Katalog kompetisi terbaru dengan pencarian dan filter kategori, tingkat, biaya, hingga
+                            deadline.</p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="layanan-card" href="beasiswa.html">
+                        <div class="layanan-top"><span class="layanan-no">02</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-wallet"></use>
+                                </svg></span>
+                        </div>
+                        <h3>Informasi Beasiswa</h3>
+                        <p>Informasi beasiswa lengkap dengan persyaratan, dokumen, dan manfaatnya di satu tempat.</p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="layanan-card" href="scholarmatch.html">
+                        <div class="layanan-top"><span class="layanan-no">03</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-spark"></use>
+                                </svg></span>
+                        </div>
+                        <h3>ScholarMatch</h3>
+                        <p>Kuesioner singkat yang mencocokkan minat, jurusan, dan keterampilanmu dengan peluang terbaik.
+                        </p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="layanan-card" href="ebook.html">
+                        <div class="layanan-top"><span class="layanan-no">04</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-book"></use>
+                                </svg></span>
+                        </div>
+                        <h3>Pembelian E-Book</h3>
+                        <p>Panduan praktis mempersiapkan karya ilmiah, proposal bisnis, kompetisi, dan beasiswa.</p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="layanan-card" href="mentorship.html">
+                        <div class="layanan-top"><span class="layanan-no">05</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-users"></use>
+                                </svg></span>
+                        </div>
+                        <h3>Layanan Mentorship</h3>
+                        <p>Sesi pendampingan satu-lawan-satu bersama mentor berpengalaman sesuai kebutuhanmu.</p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                    <a class="layanan-card" href="publikasi-event.html">
+                        <div class="layanan-top"><span class="layanan-no">06</span>
+                            <span class="layanan-ic"><svg class="icon">
+                                    <use href="#i-upload"></use>
+                                </svg></span>
+                        </div>
+                        <h3>Publikasi Event</h3>
+                        <p>Wadah bagi penyelenggara lomba untuk mengajukan dan mempromosikan event mereka.</p>
+                        <span class="layanan-link">Buka layanan <svg class="icon">
+                                <use href="#i-arrow"></use>
+                            </svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEUNGGULAN -->
+        <section class="unggul-section">
+            <div class="container unggul-grid">
+                <div class="unggul-copy">
+                    <p class="kicker kicker-light">Kenapa ScholarHub?</p>
+                    <h2>Dibangun untuk mahasiswa yang ingin berkembang</h2>
+                    <p>Tidak perlu lagi menelusuri puluhan grup dan akun medsos satu per satu.
+                        ScholarHub mengumpulkan peluang, menyaring yang paling relevan, dan
+                        membantumu bersiap sampai garis finish.</p>
+                    <a class="btn btn-primary" href="scholarmatch.html"><svg class="icon">
+                            <use href="#i-spark"></use>
+                        </svg>Coba ScholarMatch</a>
+                </div>
+                <ul class="unggul-list">
+                    <li>
+                        <span class="unggul-ic"><svg class="icon">
+                                <use href="#i-target"></use>
+                            </svg></span>
+                        <div>
+                            <h4>Terpusat dan gratis diakses</h4>
+                            <p>Seluruh informasi lomba dan beasiswa dapat diakses tanpa biaya.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="unggul-ic"><svg class="icon">
+                                <use href="#i-spark"></use>
+                            </svg></span>
+                        <div>
+                            <h4>Pencocokan minat</h4>
+                            <p>ScholarMatch menyaring peluang yang paling relevan dengan profilmu.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="unggul-ic"><svg class="icon">
+                                <use href="#i-book"></use>
+                            </svg></span>
+                        <div>
+                            <h4>Panduan siap pakai</h4>
+                            <p>E-book persiapan menyusun karya ilmiah, proposal, dan beasiswa.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="unggul-ic"><svg class="icon">
+                                <use href="#i-users"></use>
+                            </svg></span>
+                        <div>
+                            <h4>Dukungan mentor</h4>
+                            <p>Konsultasi dengan mentor berpengalaman untuk mempercepat progresmu.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA AKHIR -->
+        <section class="cta-final">
+            <div class="container cta-inner">
+                <div>
+                    <h2>Siap menemukan peluang pertamamu?</h2>
+                    <p>Jawab lima pertanyaan singkat dan dapatkan rekomendasi lomba &amp; beasiswa dalam semenit.</p>
+                </div>
+                <a class="btn btn-dark" href="scholarmatch.html"><svg class="icon">
+                        <use href="#i-spark"></use>
+                    </svg>Coba ScholarMatch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark"><svg class="icon">
+                            <use href="#i-cap"></use>
+                        </svg></span>
+                    <span class="brand-text">Scholar<em>Hub</em></span>
+                </a>
+                <p>Aggregator informasi lomba dan beasiswa untuk mahasiswa — temukan peluang,
+                    cocokkan dengan minatmu, dan berkembang bersama mentor serta panduan siap pakai.</p>
+                <p class="footer-note"><svg class="icon">
+                        <use href="#i-info"></use>
+                    </svg>
+                    Situs demo untuk tugas kuliah. Seluruh data bersifat contoh dan pembayaran sepenuhnya simulasi.</p>
+            </div>
+            <nav class="footer-col">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="lomba.html">Informasi Lomba</a></li>
+                    <li><a href="beasiswa.html">Informasi Beasiswa</a></li>
+                    <li><a href="scholarmatch.html">ScholarMatch</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="ebook.html">Pembelian E-Book</a></li>
+                    <li><a href="mentorship.html">Layanan Mentorship</a></li>
+                    <li><a href="publikasi-event.html">Publikasi Event</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li><svg class="icon">
+                            <use href="#i-mail"></use>
+                        </svg>
+                        <a href="mailto:halo@scholarhub.example">halo@scholarhub.example</a>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-phone"></use>
+                        </svg>
+                        <span>+62 812-0000-0000 <em>(nomor contoh)</em></span>
+                    </li>
+                    <li><svg class="icon">
+                            <use href="#i-map-pin"></use>
+                        </svg>
+                        <span>Kampus Merdeka, Jakarta <em>(alamat contoh)</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span data-year>2025</span> ScholarHub — Proyek demo mata kuliah.</span>
+                <span>Dibangun dengan HTML, CSS, dan JavaScript murni.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -307,6 +307,34 @@ section {
 }
 
 /* Navbar */
+
+
+/* Logo ScholarHub */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-text {
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.brand-text em {
+    font-style: normal;
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -429,6 +457,7 @@ section {
         justify-content: center
     }
 }
+
 
 /* Page hero (halaman layanan) */
 .page-hero {

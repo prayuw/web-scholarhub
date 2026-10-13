@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,15 @@
   <link rel="stylesheet" href="css/auth.css">
   <script src="js/auth.js" defer></script>
 </head>
+
 <body>
   <main class="auth-shell">
-    <a class="brand" href="index.html" aria-label="ScholarHub - Beranda">
-      <span class="brand-mark">S</span><span>Scholar<span class="brand-accent">Hub</span></span>
-    </a>
+    
+<a class="brand" href="index.html">
+  <img src="assets/images/scholarhub-logo.png" alt="Logo ScholarHub" class="brand-logo">
+  <span class="brand-text">Scholar<em>Hub</em></span>
+</a>
+
 
     <section class="auth-card">
       <div class="auth-intro">
@@ -35,8 +40,10 @@
         <div class="form-field">
           <label for="loginPassword">Password</label>
           <div class="password-wrap">
-            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required>
-            <button class="password-toggle" type="button" data-toggle-password="loginPassword" aria-label="Tampilkan password">Lihat</button>
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password"
+              placeholder="Masukkan password" required>
+            <button class="password-toggle" type="button" data-toggle-password="loginPassword"
+              aria-label="Tampilkan password">Lihat</button>
           </div>
           <small class="field-error" id="loginPasswordError"></small>
         </div>
@@ -51,4 +58,5 @@
     <p class="page-footnote">ScholarHub · Prototype untuk demonstrasi</p>
   </main>
 </body>
+
 </html>
